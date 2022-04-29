@@ -8,7 +8,6 @@
 ------------------------------------------------------------------
 with Ada.Text_IO;
 with Ada.Integer_Text_IO;
-with Ada.Long_Float_Text_IO;
 with Ada.Numerics.Generic_Real_Arrays;
 with Ada.Numerics.Generic_Complex_Types;
 with Ada.Numerics.Generic_Complex_Arrays;
@@ -17,14 +16,15 @@ with Generic_Roots;
 procedure Croot is
    package TIO renames Ada.Text_IO;
    package IIO renames Ada.Integer_Text_IO;
-   package FIO renames Ada.Long_Float_Text_IO;
-   package NRA is new Ada.Numerics.Generic_Real_Arrays (Long_Float);
-   package NCT is new Ada.Numerics.Generic_Complex_Types (Long_Float);
+   type Real is digits 15;
+   package FIO is new Ada.Text_IO.Float_IO (Real);
+   package NRA is new Ada.Numerics.Generic_Real_Arrays (Real);
+   package NCT is new Ada.Numerics.Generic_Complex_Types (Real);
    package NCA is new Ada.Numerics.Generic_Complex_Arrays (NRA, NCT);
-   procedure Roots is new Generic_Roots (Long_Float, NRA, NCT, NCA);
+   procedure Roots is new Generic_Roots (Real, NRA, NCT, NCA);
    use type NCT.Complex;
 
-   Epsilon : constant Long_Float := 1.0 / (10.0**Long_Float'Digits);
+   Epsilon : constant Real := 1.0 / (10.0**Real'Digits);
 
    procedure Sort (A : in out NCA.Complex_Vector) is
       Temp    : NCT.Complex;
@@ -70,7 +70,7 @@ procedure Croot is
       TIO.New_Line;
    end Show_Poly;
 
-   procedure Show_Real (X : Long_Float) is
+   procedure Show_Real (X : Real) is
    begin
       if abs (X) > Epsilon then
          FIO.Put (X);
@@ -80,7 +80,7 @@ procedure Croot is
    end Show_Real;
 
    procedure Show_Roots (R : in out NCA.Complex_Vector; pair : Boolean) is
-      Re, Im : Long_Float;
+      Re, Im : Real;
       Index  : Natural := R'First;
    begin
       Sort (R);
@@ -127,20 +127,21 @@ procedure Croot is
 
    procedure Validate (P, R : NCA.Complex_Vector) is
       Zero   : constant NCT.Complex := NCT.Compose_From_Cartesian (0.0);
-      Error  : Long_Float           := NCT.Re (Zero);
+      Error  : Real                 := NCT.Re (Zero);
       Result : NCT.Complex          := Zero;
    begin
       for I in R'Range loop
          Result := Eval (P, R (I)) - Zero;
-         Error  := Long_Float'Max (Error, abs (NCT.Re (Result)));
-         Error  := Long_Float'Max (Error, abs (NCT.Im (Result)));
+         Error  := Real'Max (Error, abs (NCT.Re (Result)));
+         Error  := Real'Max (Error, abs (NCT.Im (Result)));
       end loop;
       TIO.Put ("Largest error: ");
       if Error > Epsilon then
          TIO.Put ("=");
          FIO.Put (Error);
       else
-         TIO.Put ("< 1.0E-15");
+         TIO.Put ("<");
+         FIO.Put (Epsilon);
       end if;
       TIO.New_Line;
    end Validate;

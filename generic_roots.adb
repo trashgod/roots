@@ -15,7 +15,7 @@ pragma License (Modified_GPL);
 --  granted additional permissions described in the GCC Runtime Library
 --  Exception, version 3.1, as published by the Free Software Foundation.
 --
---  Foobar is distributed in the hope that it will be useful, but
+--  This is distributed in the hope that it will be useful, but
 --  WITHOUT ANY WARRANTY; without even the implied warranty of
 --  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
 --  General Public License for more details.

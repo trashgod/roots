@@ -1,4 +1,4 @@
-Polynomial roots using the [Durand-Kerner-Weierstrass](http://en.wikipedia.org/wiki/Durand-Kerner_method) method in Ada. An example of instantiating []`Generic_Roots`](generic_roots.ads) and invoking it may be found [here](croot.adb). Typical output is shown below:
+Polynomial roots using the [Durand-Kerner-Weierstrass](http://en.wikipedia.org/wiki/Durand-Kerner_method) method in Ada. An example of instantiating [`Generic_Roots`](generic_roots.ads) and invoking it may be found [here](croot.adb). Typical output is shown below:
 
 ```
 $ gprbuild croot && ./obj/croot

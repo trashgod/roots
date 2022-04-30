@@ -79,7 +79,7 @@ procedure Croot is
       end if;
    end Show_Real;
 
-   procedure Show_Roots (R : in out NCA.Complex_Vector; pair : Boolean) is
+   procedure Show_Roots (R : in out NCA.Complex_Vector; Pair : Boolean) is
       Re, Im : Real;
       Index  : Natural := R'First;
    begin
@@ -91,7 +91,7 @@ procedure Croot is
             TIO.Put ("Real: ");
             Show_Real (Re);
          else
-            if pair then
+            if Pair then
                TIO.Put ("Comp: ");
                Show_Real (Re);
                TIO.Put (" +-");
@@ -171,6 +171,7 @@ procedure Croot is
       TIO.New_Line;
    end Show_Result;
 
+   -- All one polynomial of order N
    procedure Show_AOP (N : Natural) is
       P : constant NRA.Real_Vector (0 .. N) := (others => 1.0);
    begin
@@ -178,7 +179,7 @@ procedure Croot is
    end Show_AOP;
 
 begin
-   TIO.Put_Line ("Ada.Numerics.Long_Complex_Arrays.Roots:");
+   TIO.Put_Line ("Roots of assorted monic polynomials:");
    -- different real roots (x - 1)(x - 2) = x^2  - 3x + 2
    Show_Result ((2.0, -3.0, 1.0));
 
@@ -205,6 +206,7 @@ begin
    end loop;
    Show_AOP (37);
 
+   -- complex coefficients
    TIO.Put_Line ("Poly: (1 + 3i)x^2 + (2 + 2i)x + (3 + i)");
    Show_Result ((3.0, 2.0, 1.0), (1.0, 2.0, 3.0));
 

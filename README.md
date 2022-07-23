@@ -1,10 +1,10 @@
-# Modular Project
+# Ada Demonstration Programs
 
 Ada demonstration programs, including complex polynomial roots.
 
 ## Complex Polynomial Roots 
 
-Complex polynomial roots using the [Durand-Kerner-Weierstrass](http://en.wikipedia.org/wiki/Durand-Kerner_method) method in Ada. An example of instantiating [`Generic_Roots`](roots/generic_roots.ads) and invoking it may be found [here](roots/croot.adb). Complete output is shown [here](roots/roots.md)]:
+Complex polynomial roots using the [Durand-Kerner-Weierstrass](http://en.wikipedia.org/wiki/Durand-Kerner_method) method in Ada. An example of instantiating [`Generic_Roots`](roots/generic_roots.ads) and invoking it may be found [here](roots/croot.adb). Complete output is shown [here](roots/roots.md):
 
 ```
 $ gprbuild croot && ./obj/croot

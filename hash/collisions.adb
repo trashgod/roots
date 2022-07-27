@@ -4,8 +4,8 @@
 --  Count collisions that would occur in an instance of
 --  Ada.Containers.Hashed_Maps using Ada.Strings.Bounded.Hash
 --
---| Copyright 2007-2022 John B. Matthews
---| Distribution: GPL with GCC Runtime Library Exception
+--  Copyright 2007-2022 John B. Matthews
+--  Distribution: GPL with GCC Runtime Library Exception
 --
 ------------------------------------------------------------------
 
@@ -36,7 +36,6 @@ procedure Collisions is
    Word_List  : Container.Vector;
    Word_Count : Ada.Containers.Count_Type;
 
-   --  procedure Show_Counts (Position : in ACOM.Cursor);
    procedure Show_Counts (Position : ACOM.Cursor) is
       Key     : constant Natural := ACOM.Key (Position);
       Element : constant Natural := ACOM.Element (Position);

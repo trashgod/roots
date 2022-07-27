@@ -4,7 +4,7 @@ Ada demonstration programs, including hash collisions and complex polynomial roo
 
 ## Collisions in a Hashed Table
 
-This program examines collisions in a hashed table. In the program's output, the row labels represent occupancy classes. Row zero is unused table entries; row one is table entries occupied by a single word; row two is table entries occupied by two words; etc. Next to each count is the percentage of words hashed to that occupancy class. In the example shown, 55% of the 235,886 words have unique hashes; in the worst case, seven words hash to the same table entry. See also [_Hash Table_](https://en.wikipedia.org/wiki/Hash_table).
+This program examines collisions in a hashed table. In the program's output, the rows labeled 0..7 represent occupancy classes. Row zero is unused table entries; row one is table entries occupied by a single word; row two is table entries occupied by two words; etc. Next to each count is the percentage of words hashed to that occupancy class. In the example shown, 55% of the 235,886 words have unique hashes; in the worst case, seven words hash to the same table entry. See also [_Hash Table_](https://en.wikipedia.org/wiki/Hash_table).
 
 ```
 $ gprbuild collisions && ./obj/collisions

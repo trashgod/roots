@@ -10,7 +10,7 @@ This program examines collisions in a hashed table. In the program's output, the
 $ gprbuild collisions && ./obj/collisions
 …
 /usr/share/dict/words
-Word count: 235886
+Hash count: 235886
 Table size: 393241
 Load factor: 59.99%
  0: 215725 (0.00%)

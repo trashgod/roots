@@ -1,4 +1,15 @@
-pragma Warnings ("I"); -- allow internal unit, Prime_Numbers
+------------------------------------------------------------------
+--
+--  Report collisions that would occur in an instance of
+--  Ada.Containers.Hashed_Maps given a list of hashes.
+--
+--  Copyright 2007-2022 John B. Matthews
+--  Distribution: GPL with GCC Runtime Library Exception
+--
+------------------------------------------------------------------
+
+pragma License (Modified_GPL);
+pragma Warnings ("I"); -- allow internal unit Prime_Numbers
 with Ada.Containers.Ordered_Maps;
 with Ada.Containers.Prime_Numbers; use Ada.Containers.Prime_Numbers;
 with Ada.Float_Text_IO;            use Ada.Float_Text_IO;
@@ -54,4 +65,5 @@ package body Report is
       end loop;
       Counts.Iterate (Print_Count'Access);
    end Print;
+
 end Report;

@@ -26,5 +26,13 @@ project Default is
             for Switches ("Ada") use ("-shared");
       end case;
    end Binder;	
+   
+   package Linker is
+      case Mode is
+         when "develop" =>
+         when "release" =>
+            for Switches ("Ada") use ("-dead_strip");
+      end case;
+   end Linker;	
 
 end Default;

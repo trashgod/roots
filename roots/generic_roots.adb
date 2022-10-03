@@ -46,9 +46,6 @@ procedure Generic_Roots (P : Complex_Vector; R : out Complex_Vector) is
    Epsilon   : constant Real'Base := 1.0 / (10.0**Real'Digits);
    Max_Count : constant Natural   := 999;
 
-   --  Use Durand-Kerner-Weierstrass method
-   procedure OrderN (P : Complex_Vector; R : out Complex_Vector);
-
    --  Determine if the components of two vectors are unchanging
    function Done (A, B : Complex_Vector) return Boolean;
 
@@ -90,7 +87,10 @@ procedure Generic_Roots (P : Complex_Vector; R : out Complex_Vector) is
       return Result;
    end Eval;
 
-   procedure OrderN (P : Complex_Vector; R : out Complex_Vector) is
+   --  Use Durand-Kerner-Weierstrass method
+   procedure Solve (P : Complex_Vector; R : out Complex_Vector) with
+      Pre => P'First = 0 and P'Last > 0 and R'First = 1 and P'Last = R'Last
+   is
       Count  : Natural                           := 1;
       P0     : constant Complex_Vector (P'Range) := P / P (P'Last);
       A0, A1 : Complex_Vector (R'Range);
@@ -126,16 +126,8 @@ procedure Generic_Roots (P : Complex_Vector; R : out Complex_Vector) is
          Ada.Text_IO.Put_Line ("Iterations: " & Count'Img);
          Dump (A1);
       end if;
-   end OrderN;
+   end Solve;
 
 begin
-
-   if P'First /= 0 or P'First = P'Last or R'First /= 1 or P'Last /= R'Last then
-      raise Constraint_Error;
-   end if;
-
-   if P'Last > 1 then
-      OrderN (P, R);
-   end if;
-
+   Solve (P, R);
 end Generic_Roots;

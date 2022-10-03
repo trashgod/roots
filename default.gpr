@@ -13,9 +13,9 @@ project Default is
    package Compiler is
       case Mode is
          when "develop" =>
-            for Switches ("Ada") use ("-gnatwa");
+            for Switches ("Ada") use ("-gnata", "-gnatwa");
          when "release" =>
-            for Switches ("Ada") use ("-gnatwas", "-O3");
+            for Switches ("Ada") use ("-gnatwa", "-O2");
       end case;
    end Compiler;
    

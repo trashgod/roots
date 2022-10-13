@@ -12,7 +12,7 @@ with Ada.Containers; use Ada.Containers;
 package Dictionary is
 
    File_Name : constant String     := "/usr/share/dict/words";
-   Max_Count : constant Count_Type := 20_000;
+   Max_Count : constant Count_Type := 220_000;
 
    -- Read dictionary, one word per line; map words sorted
    -- by character to permutatively equivalent words.

@@ -62,23 +62,21 @@ package body Dictionary is
    end Read_Dictionary;
 
    -- Print each word in a set.
-   procedure Print_Word (Position : in Word_Sets.Cursor) is
-      Item : constant Unbounded_String := Element (Position);
+   procedure Print_Words (Words : Set) is
    begin
-      Put (To_String (Item) & " ");
-   end Print_Word;
+      for Item of Words loop
+         Put (To_String (Item) & " ");
+      end loop;
+      New_Line;
+   end Print_Words;
 
    -- Find Str in Word_Map; print permutatively equivalent words.
    procedure Print_One (Str : in String) is
-      Word  : constant Unbounded_String := Sort (Str);
-      Words : Set;
-
+      Word : constant Unbounded_String := Sort (Str);
    begin
       Put (Str & ": ");
       if Word_Map.Contains (Word) then
-         Words := Word_Map.Element (Word);
-         Words.Iterate (Print_Word'Access);
-         New_Line;
+         Print_Words (Word_Map.Element (Word));
       else
          Put_Line ("no match.");
       end if;
@@ -91,8 +89,7 @@ package body Dictionary is
          if Words.Length > 1 then
             Count_IO.Put (Words.Length, 0);
             Put (" ");
-            Words.Iterate (Print_Word'Access);
-            New_Line;
+            Print_Words (Words);
          end if;
       end loop;
    end Print_All;

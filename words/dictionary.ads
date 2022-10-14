@@ -1,6 +1,6 @@
 ------------------------------------------------------------------
 --
---  Dictionary:  Read a dictionary and construct a map
+--  Dictionary: Read a dictionary and construct a map
 --  of permutatively equivalent words.
 --
 --  Copyright 2007-2022 John B. Matthews

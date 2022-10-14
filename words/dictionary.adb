@@ -1,3 +1,12 @@
+------------------------------------------------------------------
+--
+--  Dictionary: Read a dictionary and construct a map
+--  of permutatively equivalent words.
+--
+--  Copyright 2007-2022 John B. Matthews
+--  Distribution: GPL with GCC Runtime Library Exception
+--
+------------------------------------------------------------------
 with Ada.Characters.Handling; use Ada.Characters.Handling;
 with Ada.Containers.Generic_Array_Sort;
 with Ada.Containers.Hashed_Maps;

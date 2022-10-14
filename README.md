@@ -49,7 +49,7 @@ Largest error: < 1.00000000000000E-15
 
 ## Word Jumble
 
-Jumble is an Ada program intended to unscramble jumbled words. You can use it to solve word puzzles; or, when making your own puzzles, you can check that a jumbled word doesn't unscramble to more than one word. It implements the first algorithm outlined [here](https://en.wikipedia.org/wiki/Jumble). The output of several[examples](words/examples.sh) is shown below.
+Jumble is an Ada program intended to unscramble jumbled words. You can use it to solve word puzzles; or, when making your own puzzles, you can check that a jumbled word doesn't unscramble to more than one word. It implements the first algorithm outlined [here](https://en.wikipedia.org/wiki/Jumble). The output of several [examples](words/examples.sh) is shown below.
 
 ```
 $ ./words/examples.sh 

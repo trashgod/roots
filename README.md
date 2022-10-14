@@ -23,7 +23,7 @@ Load factor: 59.99%
  7: 1 (0.00%)
 ```
 
-## Complex Polynomial Roots 
+## Roots of Polynomials with Complex Coefficients
 
 Complex polynomial roots using the [Durand-Kerner-Weierstrass](http://en.wikipedia.org/wiki/Durand-Kerner_method) method in Ada. An example of instantiating [`Generic_Roots`](roots/generic_roots.ads) and invoking it may be found [here](roots/croot.adb). Complete output is shown [here](roots/roots.md):
 
@@ -45,4 +45,27 @@ Poly:  1.00x^2 + 0.00x^1 + 4.00
 Comp:  0.00000000000000E+00 +- 2.00000000000000E+00i
 Largest error: < 1.00000000000000E-15
 …
+```
+
+## Word Jumble
+
+Jumble is an Ada program intended to unscramble jumbled words. You can use it to solve word puzzles; or, when making your own puzzles, you can check that a jumbled word doesn't unscramble to more than one word. It implements the first algorithm outlined [here](https://en.wikipedia.org/wiki/Jumble). The output of several[examples](words/examples.sh) is shown below.
+
+```
+$ ./words/examples.sh 
+…
+Checking 215843 entries.
+jumble [-h] [word …]
+Checking 215843 entries.
+zzxxzz: no match.
+acert: caret carte cater crate creat creta react recta trace 
+eerst: ester estre reest reset steer stere stree terse tsere 
+9 Antu Tuan Tuna antu aunt naut taun tuan tuna 
+9 Canari Carian Crania acinar arnica canari carina crania narica 
+9 Merat Trema armet mater metra ramet tamer terma trame 
+9 caret carte cater crate creat creta react recta trace 
+9 ester estre reest reset steer stere stree terse tsere 
+10 Easter Eastre Teresa asteer easter reseat saeter seater staree teaser 
+10 Elaps Lepas Pales lapse salep saple sepal slape spale speal 
+11 Orang Ronga angor argon goran grano groan nagor orang organ rogan 
 ```

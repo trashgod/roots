@@ -9,30 +9,14 @@
 ------------------------------------------------------------------
 with Ada.Characters.Handling; use Ada.Characters.Handling;
 with Ada.Containers.Generic_Array_Sort;
-with Ada.Containers.Hashed_Maps;
-with Ada.Containers.Ordered_Sets;
-with Ada.Strings;             use Ada.Strings;
-with Ada.Strings.Unbounded;   use Ada.Strings.Unbounded;
-with Ada.Strings.Unbounded.Hash;
 with Ada.Text_IO;             use Ada.Text_IO;
 
 package body Dictionary is
 
-   procedure Sort is new Generic_Array_Sort
-     (Index_Type => Positive, Element_Type => Character, Array_Type => String);
-
    package Count_IO is new Ada.Text_IO.Integer_IO (Count_Type);
 
-   package Word_Sets is new Ordered_Sets (Unbounded_String);
-   use Word_Sets;
-   use type Set;
-
-   package Word_Maps is new Hashed_Maps
-     (Key_Type        => Unbounded_String, Element_Type => Set, Hash => Hash,
-      Equivalent_Keys => "=");
-   use Word_Maps;
-
-   Word_Map : Map;
+   procedure Sort is new Generic_Array_Sort
+     (Index_Type => Positive, Element_Type => Character, Array_Type => String);
 
    -- Sort the characters of Str returning a lower case Key
    function Sort (Str : String) return Unbounded_String is
@@ -45,7 +29,7 @@ package body Dictionary is
    -- Read dictionary, one word per line; map words sorted
    -- by character to permutatively equivalent words.
    procedure Read_Dictionary
-     (Name : String := File_Name; Count : Count_Type := Max_Count)
+     (Name : String := File_Name; Count : Count_Type := Reserved)
    is
       Dict_File : File_Type;
       Line      : String (1 .. 32);

@@ -1,14 +1,15 @@
-with Ada.Strings.Fixed; use Ada.Strings;
-with Ada.Text_IO;       use Ada.Text_IO;
+with Ada.Characters.Handling; use Ada.Characters.Handling;
+with Ada.Strings.Fixed;       use Ada.Strings;
+with Ada.Text_IO;             use Ada.Text_IO;
 
 package body Dictionary.Anagram is
 
    -- Print words of length N comprised of characters in Str.
    procedure Print_More (N : Natural; Str : in String) is
 
-      -- Examine first word in set; the rest are equivalent.
+      -- Examine first word in set; the rest are equivalent; ignore case.
       procedure Examine (Words : Set) is
-         Word : constant String := To_String (Words.First_Element);
+         Word : constant String := To_Lower (To_String (Words.First_Element));
 
          function Contains (S : String) return Boolean is
             Chars    : String := Str;

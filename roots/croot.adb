@@ -12,11 +12,12 @@ with Ada.Numerics.Generic_Real_Arrays;
 with Ada.Numerics.Generic_Complex_Types;
 with Ada.Numerics.Generic_Complex_Arrays;
 with Generic_Roots;
+with System;
 
 procedure Croot is
    package TIO renames Ada.Text_IO;
    package IIO renames Ada.Integer_Text_IO;
-   type Real is digits 15;
+   type Real is digits System.Max_Base_Digits;
    package FIO is new Ada.Text_IO.Float_IO (Real);
    package NRA is new Ada.Numerics.Generic_Real_Arrays (Real);
    package NCT is new Ada.Numerics.Generic_Complex_Types (Real);

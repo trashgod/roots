@@ -1,6 +1,6 @@
 # Ada Demonstration Programs
 
-Ada demonstration programs, including hash collisions, complex polynomial roots, word jumbles.
+Ada demonstration programs, including hash collisions, complex polynomial roots, and word jumbles.
 
 ## Collisions in a Hashed Table
 
@@ -32,18 +32,18 @@ $ gprbuild croot && ./obj/croot
 …
 Roots of assorted monic polynomials:
 Poly:  1.00x^2 - 3.00x^1 + 2.00
-Real:  1.00000000000000E+00
-Real:  2.00000000000000E+00
-Largest error: < 1.00000000000000E-15
+Real:  1.00000000000000000E+00
+Real:  2.00000000000000000E+00
+Largest error: < 1.00000000000000000E-18
 
 Poly:  1.00x^2 - 2.00x^1 + 1.00
-Real:  1.00000000000000E+00
-Real:  1.00000000000000E+00
-Largest error: < 1.00000000000000E-15
+Real:  1.00000000000000000E+00
+Real:  1.00000000000000000E+00
+Largest error: < 1.00000000000000000E-18
 
 Poly:  1.00x^2 + 0.00x^1 + 4.00
-Comp:  0.00000000000000E+00 +- 2.00000000000000E+00i
-Largest error: < 1.00000000000000E-15
+Comp:  0.00000000000000000E+00 +- 2.00000000000000000E+00i
+Largest error: < 1.00000000000000000E-18
 …
 ```
 

@@ -1,6 +1,6 @@
 # Ada Demonstration Programs
 
-Ada demonstration programs, including hash collisions, complex polynomial roots, and word jumbles.
+Ada demonstration programs, including hash collisions, hex dump, complex polynomial roots, and word jumbles.
 
 ## Collisions in a Hashed Table
 
@@ -21,6 +21,12 @@ Load factor: 59.99%
  5: 143 (0.30%)
  6: 14 (0.04%)
  7: 1 (0.00%)
+```
+
+## Hex dump example that reads from either standard input or a named file using  `Ada.Text_IO.Text_Streams`; see `stream/examples.sh` for more.
+
+```
+$ gprbuild hd && ./obj/hd -h
 ```
 
 ## Roots of Polynomials with Complex Coefficients

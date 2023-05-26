@@ -23,7 +23,9 @@ Load factor: 59.99%
  7: 1 (0.00%)
 ```
 
-## Hex dump utility that reads from either standard input or a named file using  `Ada.Text_IO.Text_Streams`; see `stream/examples.sh` for more examples.
+## Hex Dump
+
+A hexadecimal dump utility that reads from either standard input or a named file using  `Ada.Text_IO.Text_Streams`; see `stream/examples.sh` for more examples.
 
 ```
 $ gprbuild hd && ./obj/hd -h

@@ -23,14 +23,6 @@ Load factor: 59.99%
  7: 1 (0.00%)
 ```
 
-## Hex Dump
-
-A hexadecimal dump utility that reads from either standard input or a named file using  `Ada.Text_IO.Text_Streams`; see `stream/examples.sh` for more examples.
-
-```
-$ gprbuild hd && ./obj/hd -h
-```
-
 ## Roots of Polynomials with Complex Coefficients
 
 Complex polynomial roots using the [Durand-Kerner-Weierstrass](http://en.wikipedia.org/wiki/Durand-Kerner_method) method in Ada. An example of instantiating [`Generic_Roots`](roots/generic_roots.ads) and invoking it may be found [here](roots/croot.adb). Complete output is shown [here](roots/roots.md):
@@ -53,6 +45,15 @@ Poly:  1.00x^2 + 0.00x^1 + 4.00
 Comp:  0.00000000000000000E+00 +- 2.00000000000000000E+00i
 Largest error: < 1.00000000000000000E-18
 …
+```
+
+## Stream Hex Dump
+
+A hexadecimal dump utility that reads from either a named file, using `Ada.Streams.Stream_IO`, or standard input, using `Ada.Text_IO.Text_Streams`; see `stream/examples.sh` for more examples.
+
+```
+$ gprbuild hd && ./obj/hd -h
+HexDump: hd [file | stdin]
 ```
 
 ## Word Jumble

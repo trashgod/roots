@@ -1,15 +1,16 @@
 ------------------------------------------------------------------
 --|
---| Hex Dump
+--| Stream Hex Dump
 --|
 --| Copyright 1995-2023 John B. Matthews
 --| Distribution: GPL with GCC Runtime Library Exception
 --|
 ------------------------------------------------------------------
 
-with Ada.Command_Line; use Ada.Command_Line;
-with Ada.Exceptions;   use Ada.Exceptions;
-with Ada.Text_IO;      use Ada.Text_IO;
+with Ada.Command_Line;      use Ada.Command_Line;
+with Ada.Exceptions;        use Ada.Exceptions;
+with Ada.Streams.Stream_IO; use Ada.Streams;
+with Ada.Text_IO;           use Ada.Text_IO;
 with Ada.Text_IO.Text_Streams;
 
 procedure HD is
@@ -66,7 +67,7 @@ procedure HD is
       end if;
    end Tail;
 
-   -- Hex dump a stream
+   -- Hex dump a text stream
    procedure Hex_Dump (Stream_Ptr : Text_Streams.Stream_Access) is
       C : Character;
       S : String (1 .. 16) := (others => ' ');
@@ -82,13 +83,20 @@ procedure HD is
          Tail (I, S);
    end Hex_Dump;
 
-   -- Hex dump a named file
-   procedure Hex_Dump (File_Name : String) is
-      Input_File : File_Type;
+   -- Hex dump a stream
+   procedure Hex_Dump (Stream_Ptr : Stream_IO.Stream_Access) is
+      C : Character;
+      S : String (1 .. 16) := (others => ' ');
+      I : Natural          := 0;
+      A : Natural          := 0;
    begin
-      Open (Input_File, In_File, File_Name);
-      Hex_Dump (Text_Streams.Stream (Input_File));
-      Close (Input_File);
+      loop
+         Character'Read (Stream_Ptr, C);
+         Dump (C, S, I, A);
+      end loop;
+   exception
+      when End_Error =>
+         Tail (I, S);
    end Hex_Dump;
 
    procedure Show_Usage is
@@ -102,7 +110,13 @@ begin
    elsif Argument (1) = "-h" then
       Show_Usage;
    else
-      Hex_Dump (Argument (1));
+      declare
+         Input_File : Stream_IO.File_Type;
+      begin
+         Stream_IO.Open (Input_File, Stream_IO.In_File, Argument (1));
+         Hex_Dump (Stream_IO.Stream (Input_File));
+         Stream_IO.Close (Input_File);
+      end;
    end if;
 exception
    when Error : others =>

@@ -49,11 +49,18 @@ Largest error: < 1.00000000000000000E-18
 
 ## Stream Hex Dump
 
-A hexadecimal dump utility that reads from either a named file, using `Ada.Streams.Stream_IO`, or standard input, using `Ada.Text_IO.Text_Streams`; see `stream/examples.sh` for more examples.
+A hexadecimal dump utility that reads from either
+
+- A named file using `Ada.Streams.Stream_IO`, or
+- Standard input using `Ada.Text_IO.Text_Streams`.
+
+See [`stream/examples.sh`](https://github.com/trashgod/roots/blob/master/stream/examples.sh) for more examples.
 
 ```
 $ gprbuild hd && ./obj/hd -h
 HexDump: hd [file | stdin]
+$ echo "Hello, world." | ./obj/hd
+000000: 48 65 6c 6c 6f 2c 20 77 6f 72 6c 64 2e 0a        Hello, world..
 ```
 
 ## Word Jumble

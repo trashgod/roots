@@ -101,7 +101,7 @@ procedure HD is
 
    procedure Show_Usage is
    begin
-      Put_Line ("HexDump: hd [file | stdin]");
+      Put_Line ("HexDump: hd [file ... | stdin]");
    end Show_Usage;
 
 begin
@@ -113,9 +113,11 @@ begin
       declare
          Input_File : Stream_IO.File_Type;
       begin
-         Stream_IO.Open (Input_File, Stream_IO.In_File, Argument (1));
+      for N in 1 .. Argument_Count loop
+         Stream_IO.Open (Input_File, Stream_IO.In_File, Argument (N));
          Hex_Dump (Stream_IO.Stream (Input_File));
          Stream_IO.Close (Input_File);
+      end loop;
       end;
    end if;
 exception

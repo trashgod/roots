@@ -54,7 +54,7 @@ A hexadecimal dump utility that reads from either
 - A named file using `Ada.Streams.Stream_IO`, or
 - Standard input using `Ada.Text_IO.Text_Streams`.
 
-See [`stream/examples.sh`](https://github.com/trashgod/roots/blob/master/stream/examples.sh) for more examples.
+See [`stream/examples.sh`](stream/examples.sh) for more examples.
 
 ```
 $ gprbuild hd && ./obj/hd -h

@@ -1,6 +1,6 @@
 # Ada Demonstration Programs
 
-Ada demonstration programs, including hash collisions, hex dump, complex polynomial roots, and word jumbles.
+Ada demonstration programs, including hash collisions, complex polynomial roots, stream hex dump, and word jumbles.
 
 ## Collisions in a Hashed Table
 

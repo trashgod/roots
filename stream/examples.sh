@@ -1,7 +1,8 @@
+#!/bin/sh
 echo Building…
 gprbuild -Xmode=release hd
 ./obj/hd -h
-echo -n Testing…
+echo Testing…
 ./obj/hd default.gpr > test1.txt
 ./obj/hd < default.gpr > test2.txt
 diff test1.txt test2.txt

@@ -4,7 +4,7 @@ Ada demonstration programs, including hash collisions, complex polynomial roots,
 
 ## Collisions in a Hashed Table
 
-This program examines collisions in a hashed table. In the program's output, the rows labeled 0..7 represent occupancy classes. Row zero is unused table entries; row one is table entries occupied by a single word; row two is table entries occupied by two words; etc. Next to each count is the percentage of words hashed to that occupancy class. In the example shown, 55% of the 235,886 words have unique hashes; in the worst case, seven words hash to the same table entry. See also [_Hash Table_](https://en.wikipedia.org/wiki/Hash_table).
+This program examines collisions in a hashed table. In the program's output, the rows labeled 0..7 represent occupancy classes. Row zero is unused table entries; row one is table entries occupied by a single word; row two is table entries occupied by two words; etc. Next to each count is the percentage of words hashed to that occupancy class. In the example shown, 55% of the 235,886 words have unique hashes; in the worst case, seven words hash to the same table entry. See also [hash/examples](hash/examples.sh) and [_Hash Table_](https://en.wikipedia.org/wiki/Hash_table).
 
 ```
 $ gprbuild collisions && ./obj/collisions
@@ -25,7 +25,7 @@ Load factor: 59.99%
 
 ## Roots of Polynomials with Complex Coefficients
 
-Complex polynomial roots using the [Durand-Kerner-Weierstrass](http://en.wikipedia.org/wiki/Durand-Kerner_method) method in Ada. An example of instantiating [`Generic_Roots`](roots/generic_roots.ads) and invoking it may be found [here](roots/croot.adb). Complete output is shown [here](roots/roots.md):
+Complex polynomial roots using the [Durand-Kerner-Weierstrass](http://en.wikipedia.org/wiki/Durand-Kerner_method) method in Ada. An example of instantiating [`Generic_Roots`](roots/generic_roots.ads) and invoking it may be found [here](roots/croot.adb). See [roots/examples](roots/examples.sh); complete output is shown [here](roots/roots.md).
 
 ```
 $ gprbuild croot && ./obj/croot
@@ -54,7 +54,7 @@ A hexadecimal dump utility that reads from either
 - A named file using `Ada.Streams.Stream_IO`, or
 - Standard input using `Ada.Text_IO.Text_Streams`.
 
-See [`stream/examples.sh`](stream/examples.sh) for more examples.
+See [`stream/examples`](stream/examples.sh) for more examples.
 
 ```
 $ gprbuild hd && ./obj/hd -h

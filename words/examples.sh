@@ -1,5 +1,5 @@
 #!/bin/sh
-gprbuild -Xmode=release jumble
+gprbuild -q -Xmode=release jumble
 ./obj/jumble -h
 ./obj/jumble 7 aghhsowxyz
 ./obj/jumble zzxxzz acert eerst

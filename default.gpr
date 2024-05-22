@@ -1,3 +1,4 @@
+with "shared/greetings.gpr";
 project Default is
    type Mode_Type is ("develop", "release");
    Mode : Mode_Type := external ("mode", "develop");
@@ -7,12 +8,14 @@ project Default is
    for Source_Dirs use (
       "hash",
       "roots",
+      "shared",
       "stream",
       "words"
    );
    for Main use (
       "collisions.adb",
       "croot.adb",
+      "client.adb",
       "hd.adb",
       "jumble.adb"
    );

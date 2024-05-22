@@ -1,6 +1,6 @@
 # Ada Demonstration Programs
 
-Ada demonstration programs, including hash collisions, complex polynomial roots, stream hex dump, and word jumbles.
+Ada demonstration programs, including hash collisions, complex polynomial roots, shared libraries, stream hex dump, and word jumbles.
 
 ## Collisions in a Hashed Table
 
@@ -45,6 +45,16 @@ Poly:  1.00x^2 + 0.00x^1 + 4.00
 Comp:  0.00000000000000000E+00 +- 2.00000000000000000E+00i
 Largest error: < 1.00000000000000000E-18
 …
+```
+
+## Shared Library
+
+A simple, shared library that mixes Ada and C. Executing [shared/examples](shared/examples.sh) runs a simple client that uses the library. A more complex, aggregate library may be found in [_Samples GPR Aggregate Libs_](https://github.com/LoneWanderer-GH/Samples-GPR-Aggregate-Libs). While the examples are nominally cross-platform, some MacOS specific issues are examined [here](https://stackoverflow.com/a/78306770/230513).
+
+```
+$ ./shared/examples.sh
+Hello from Ada!
+Hello from C!
 ```
 
 ## Stream Hex Dump

@@ -1,6 +1,6 @@
 #!/bin/sh
 printf "Building…"
-gprbuild -q -Xmode=release hd
+gprbuild hd
 printf "Testing…\n"
 ./obj/hd -h
 ./obj/hd default.gpr > test1.txt

@@ -1,3 +1,3 @@
 #!/bin/sh
-gprbuild -q -Xmode=release croot 
+gprbuild croot 
 ./obj/croot

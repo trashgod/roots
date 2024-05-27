@@ -1,3 +1,3 @@
 #!/bin/sh
-gprbuild -q -Xmode=release client
+gprbuild client
 ./obj/client

@@ -1,3 +1,3 @@
 #!/bin/sh
-gprbuild -q -Xmode=release collisions
+gprbuild collisions
 ./obj/collisions

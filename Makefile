@@ -20,6 +20,7 @@ run:
 	./roots/examples.sh | grep error
 	./shared/examples.sh
 	./stream/examples.sh
+	./war/examples.sh
 	./words/examples.sh
 
 clean:

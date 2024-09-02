@@ -1,6 +1,6 @@
 # Ada Demonstration Programs
 
-Ada demonstration programs, including hash collisions, complex polynomial roots, shared libraries, stream hex dump, and word jumbles.
+Ada demonstration programs, including hash collisions, complex polynomial roots, shared libraries, stream hex dump, simulation, and word jumbles.
 
 ## Collisions in a Hashed Table
 
@@ -71,6 +71,36 @@ $ gprbuild hd && ./obj/hd -h
 HexDump: hd [file | stdin]
 $ echo "Hello, world." | ./obj/hd
 000000: 48 65 6c 6c 6f 2c 20 77 6f 72 6c 64 2e 0a        Hello, world..
+```
+## War Card Game Simulation
+
+An Ada program that repeatedly plays the children's card game of war. After playing a number of games, the program tallies up some statistics on wins and losses, followed by an ASCII plot of how long the games took.
+
+```
+$ gprbuild war && ./obj/war 
+Working...
+Of 10000 games, 9902 ended before 1200 plays.
+West won:       5043
+East won:       4859
+Average length: 315
+Standard dev.:  215
+Longest game:   1174
+Shortest game:  30
+W: A J K A 9 K 5 6 Q 5 7 5 9 T 4 A J 6 K 3 Q Q 3 A Q 6 
+E: K 8 9 7 7 2 2 2 8 J 3 5 9 8 4 T T J 4 7 2 6 T 8 3 4 
+Distribution of lengths:
+0000-0100 |*********
+0100-0200 |******************************
+0200-0300 |**********************
+0300-0400 |***************
+0400-0500 |**********
+0500-0600 |*******
+0600-0700 |*****
+0700-0800 |***
+0800-0900 |**
+0900-1000 |**
+1000-1100 |*
+1100-1200 |*
 ```
 
 ## Word Jumble

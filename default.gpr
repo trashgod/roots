@@ -10,6 +10,7 @@ project Default is
       "roots",
       "shared",
       "stream",
+      "war",
       "words"
    );
    for Main use (
@@ -17,6 +18,7 @@ project Default is
       "croot.adb",
       "client.adb",
       "hd.adb",
+      "war.adb",
       "jumble.adb"
    );
 

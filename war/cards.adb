@@ -24,8 +24,8 @@ package body Cards is
             Place (P, (V, S));
          end loop;
       end loop;
-      for I in Card_Range loop
-         J          := Any_Card.Random (G);
+      for I in reverse Card_Range loop
+         J          := Any_Card.Random (G, Card_Range'First, I);
          Temporary  := P.Card (J);
          P.Card (J) := P.Card (I);
          P.Card (I) := Temporary;

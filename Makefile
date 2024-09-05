@@ -11,20 +11,24 @@ RMDIR    ?= rmdir
 
 all:
 	$(GPRBUILD)
+	pushd $(LIBDIR) && $(GPRBUILD) && popd
 
 release:
 	$(GPRBUILD) -Xmode=release
+	pushd $(LIBDIR) && $(GPRBUILD) -Xmode=release && popd
 
 run:
 	./hash/examples.sh
 	./roots/examples.sh | grep error
-	./shared/examples.sh
 	./stream/examples.sh
 	./war/examples.sh
 	./words/examples.sh
+	pushd $(LIBDIR) && ./examples.sh && popd
 
 clean:
-	$(GPRCLEAN) -r
+	$(GPRCLEAN)
+	$(GPRCLEAN) -r -P $(LIBDIR)/default
 
 cleaner: clean
-	$(RMDIR) $(OBJDIR) $(LIBDIR)/lib                                                                               
+	$(RMDIR) $(OBJDIR)
+	$(RMDIR) $(LIBDIR)/$(OBJDIR) $(LIBDIR)/lib                                                                            

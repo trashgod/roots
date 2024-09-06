@@ -52,7 +52,8 @@ Largest error: < 1.00000000000000000E-18
 A simple, shared library that mixes Ada and C. Executing [shared/examples](shared/examples.sh) runs a simple client that uses the library. A more complex, aggregate library may be found in [_Samples GPR Aggregate Libs_](https://github.com/LoneWanderer-GH/Samples-GPR-Aggregate-Libs). While the examples are nominally cross-platform, some MacOS specific issues are examined [here](https://stackoverflow.com/a/78306770/230513).
 
 ```
-$ ./shared/examples.sh
+pushd shared && ./examples.sh
+…
 Hello from Ada!
 Hello from C!
 ```

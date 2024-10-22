@@ -7,7 +7,6 @@ project Default is
    for Source_Dirs use (
       "hash",
       "roots",
---      "shared",
       "stream",
       "war",
       "words"
